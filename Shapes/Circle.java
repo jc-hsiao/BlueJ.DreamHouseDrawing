@@ -11,6 +11,7 @@ import java.awt.geom.*;
 public class Circle
 {
     private int diameter;
+    private int diameter2;
     private int xPosition;
     private int yPosition;
     private String color;
@@ -22,9 +23,10 @@ public class Circle
     public Circle()
     {
         diameter = 30;
-        xPosition = 20;
-        yPosition = 60;
-        color = "blue";
+        diameter2 = 30;
+        xPosition = 0;
+        yPosition = 0;
+        color = "#00ffff";
         isVisible = false;
     }
 
@@ -149,14 +151,15 @@ public class Circle
     /**
      * Change the size to the new size (in pixels). Size must be >= 0.
      */
-    public void changeSize(int newDiameter)
+    public void changeSize(int newHeight, int newWidth)
     {
         erase();
-        diameter = newDiameter;
+        diameter = newHeight;
+        diameter2 = newWidth;
         draw();
     }
 
-    /**
+    /*
      * Change the color. Valid colors are "red", "yellow", "blue", "green",
      * "magenta" and "black".
      */
@@ -174,7 +177,7 @@ public class Circle
         if(isVisible) {
             Canvas canvas = Canvas.getCanvas();
             canvas.draw(this, color, new Ellipse2D.Double(xPosition, yPosition, 
-                    diameter, diameter));
+                    diameter, diameter2));
             canvas.wait(10);
         }
     }

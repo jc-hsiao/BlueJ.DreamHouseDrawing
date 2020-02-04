@@ -10,6 +10,7 @@ import java.awt.*;
 public class Square
 {
     private int size;
+    private int size2;
     private int xPosition;
     private int yPosition;
     private String color;
@@ -21,9 +22,9 @@ public class Square
     public Square()
     {
         size = 30;
-        xPosition = 60;
-        yPosition = 50;
-        color = "red";
+        xPosition = 0;
+        yPosition = 0;
+        color = "#ff0000";
         isVisible = false;
     }
 
@@ -148,16 +149,16 @@ public class Square
     /**
      * Change the size to the new size (in pixels). Size must be >= 0.
      */
-    public void changeSize(int newSize)
+    public void changeSize(int newHeight, int newWidth)
     {
         erase();
-        size = newSize;
+        size = newHeight;
+        size2 = newWidth;
         draw();
     }
 
     /**
-     * Change the color. Valid colors are "red", "yellow", "blue", "green",
-     * "magenta" and "black".
+     * Change the color. works for hex color codes
      */
     public void changeColor(String newColor)
     {
@@ -165,6 +166,8 @@ public class Square
         draw();
     }
 
+    
+    
     /*
      * Draw the square with current specifications on screen.
      */
@@ -173,7 +176,7 @@ public class Square
         if(isVisible) {
             Canvas canvas = Canvas.getCanvas();
             canvas.draw(this, color,
-                    new Rectangle(xPosition, yPosition, size, size));
+                    new Rectangle(xPosition, yPosition, size, size2));
             canvas.wait(10);
         }
     }

@@ -23,9 +23,9 @@ public class Triangle
     {
         height = 30;
         width = 40;
-        xPosition = 50;
-        yPosition = 15;
-        color = "green";
+        xPosition = 0;
+        yPosition = 0;
+        color = "#00ff00";
         isVisible = false;
     }
 
@@ -158,9 +158,8 @@ public class Triangle
         draw();
     }
 
-    /**
-     * Change the color. Valid colors are "red", "yellow", "blue", "green",
-     * "magenta" and "black".
+   /**
+     * Change the color. works for hex color codes
      */
     public void changeColor(String newColor)
     {

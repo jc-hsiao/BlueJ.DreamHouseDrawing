@@ -28,8 +28,8 @@ public class Canvas
     public static Canvas getCanvas()
     {
         if(canvasSingleton == null) {
-            canvasSingleton = new Canvas("BlueJ Shapes Demo", 300, 300, 
-                    Color.white);
+            //canvasSingleton = new Canvas("BlueJ Shapes Demo", 300, 300, Color.white);
+            canvasSingleton = new Canvas("Dream House", 550, 400, Color.decode("#87CEFA"));
         }
         canvasSingleton.setVisible(true);
         return canvasSingleton;
@@ -119,8 +119,16 @@ public class Canvas
      * Set the foreground colour of the Canvas.
      * @param  newColour   the new colour for the foreground of the Canvas 
      */
+    public void setHex(String colorHex){
+        graphic.setColor(Color.decode(colorHex));
+    }
+    
     public void setForegroundColor(String colorString)
     {
+        graphic.setColor(Color.decode(colorString));
+        
+        
+        /*
         if(colorString.equals("red"))
             graphic.setColor(Color.red);
         else if(colorString.equals("black"))
@@ -137,6 +145,8 @@ public class Canvas
             graphic.setColor(Color.white);
         else
             graphic.setColor(Color.black);
+        */
+       
     }
 
     /**
